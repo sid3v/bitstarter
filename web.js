@@ -4,7 +4,8 @@ app.use(express.logger());
 
 app.get('/', function(request, response) {
   var hello=fs.readFileSync('index.html');
-  var passhello=buf.toString(hello);
+  var passhello=new Buffer(256);
+  passhello=buf.toString(hello);
   response.send(passhello);
 });
 
