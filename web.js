@@ -3,6 +3,7 @@ var app = express();
 app.use(express.logger());
 
 app.get('/', function(request, response) {
+  fs=require("fs");
   var passhello=new Buffer(256);
   passhello=fs.readFileSync('index.html');
   var hello=passhello.toString();
